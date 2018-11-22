@@ -66,7 +66,7 @@ function task2()
             $str .= "15<br>";
             return $str;
         default:
-            echo 'Ничего не найдено';
+            return 'Ничего не найдено';
 
     }
 }
