@@ -40,6 +40,16 @@ function renderPage($file, $variables = [])
     return $templateContent;
 }
 
+function get_gallery($gallery){
+    $str = '';
+    $gallery = DATA_DIR . "/" . $gallery . "/" . "small";
+    $gallery = array_slice(scandir($gallery), 2);
+    foreach ($gallery as $value){
+        $str .= "<a rel=\"gallery\" class=\"photo\" target=\"_blank\" href=\"../data/gallery_img/big/{$value}\"><img src=\"../data/gallery_img/small/{$value}\" width=\"150\" height=\"100\" /></a>";
+    }
+    return $str;
+}
+
 function _log($s, $suffix='')
 	{
 		

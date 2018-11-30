@@ -1,12 +1,16 @@
 <?php
 require_once('../config/config.php');
-$vars=	[
-			"title"=>SITE_TITLE." Главная страница - страница обо мне",
-			"footer"=>date("Y")
-		];
 
-echo renderPage("index",$vars);
+$gallery = get_gallery("gallery_img");
 
-_log("Страница загружена",'messages');
-_log($vars,'vars');
+$vars = [
+    "title" => SITE_TITLE . "Lesson 4",
+    "footer" => date("Y"),
+    "gallery" => $gallery
+];
+
+echo renderPage("index", $vars);
+
+_log("Страница загружена", 'messages');
+_log($vars, 'vars');
 
